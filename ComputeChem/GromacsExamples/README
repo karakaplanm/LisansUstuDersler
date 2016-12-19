@@ -1,0 +1,33 @@
+Öncelikle şağıdaki paketleri kurun
+
+sudo apt-get install grace rasmol pymol
+
+hazır paketi kullanılacak ise
+sudo apt-get install gromacs 
+ile gromacs ı kurabilirsiniz.
+
+Repolardaki gromacs sürümü eski olabiliyor. 
+http://www.gromacs.org/Downloads adresinden en son sürümünü indirip derleyerek kurabilirsiniz.
+
+sudo apt-get install build-essentials cmake libfftw3-dev 
+ile gerekli paketlerin kurunuz.
+Grafik kartınız NVIDIA nın cuda özellikli bir ürünü ise, GPU dan yararlanabilmek için
+sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit
+ile gerekli dosyaları kurunuz.
+
+Aşağıdaki komutlarla gromacs dizinine bir build dizini açıp derleme işlemini yapınız.
+cd gromacs-X.X.X
+mkdir build
+cd build 
+cmake ..
+
+configurasyon sorunsuz giderse
+
+make
+
+ile derleyip
+
+sudo make install 
+ile kurulumu tamamlayınız.
+
+

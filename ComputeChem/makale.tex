@@ -1,0 +1,60 @@
+\documentclass[a4,twocolumn,english]{article}
+\usepackage{python}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=1cm}
+
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\title{\LaTeX{} ile Makale}
+\author{Yazar Ad\i{}}
+
+\maketitle
+\begin{abstract}
+\lipsum[6]
+\end{abstract}
+
+\section{Introduction}
+Bu çalışma da \cite{Nobody2015} den yararlanılmıştır.
+\lipsum[1]
+\section{Experimental}
+\begin{python}%
+import os
+import numpy as np
+   
+x = np.linspace(0,10,50)
+f1 = np.sin(x)**2
+f2 = np.cos(x**2)
+import pylab
+
+pylab.rc('text', usetex=True)
+pylab.rc('font', family='serif')
+
+pylab.plot(x,f1,label=r'$f(x)=sin^{2}(\sigma)$',linestyle='dashed')
+pylab.plot(x,f2,label=r'$g(x)=cos(\sigma^{2})$',linestyle='dashdot')
+pylab.plot(x,f1/f2,label=r'$\frac{f(x)}{g(x)}$',linestyle='solid')
+
+pylab.xlabel(r'$\sigma$',fontsize=20)
+pylab.ylabel('y', fontsize=20)
+pylab.tick_params(labelsize=20)
+pylab.legend(fontsize=20)
+pylab.savefig("fonk.pdf")
+\end{python}
+
+\begin{figure}[h]
+\includegraphics[width=0.90\columnwidth]{fonk}
+\caption{This is a figure}
+\end{figure}
+
+\lipsum{4]
+\section{Results}
+\lipsum[3-5]
+
+
+\bibliography{refs}{}
+\bibliographystyle{plain}
+\end{document}

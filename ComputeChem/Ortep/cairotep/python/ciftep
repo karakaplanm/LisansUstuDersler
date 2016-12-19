@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+# ######## ######## ######## ######## ######## ######## #
+# CIFTEP                                                #
+# ORTEP3 instructions generation from CIF files         #
+# Y. Lin (transi@fzu.edu.cn)                            #
+# Distributed under:                                    #
+# GNU Lesser General Public License                     #
+# http://www.gnu.org/licenses/lgpl.html                 #
+# ######## ######## ######## ######## ######## ######## #
+
+from ciftep import main
+
+main()
